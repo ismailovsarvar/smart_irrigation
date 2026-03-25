@@ -1,0 +1,292 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>7 kunlik dinamika</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-box {
+            width: 600px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            font-family: sans-serif;
+        }
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background: #f0fdfa;
+            color: #0d8b73;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            border: 1px solid #0d8b73;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chart-box">
+    <div class="chart-header">
+        <strong>7 kunlik namlik va suv sarfi dinamikasi</strong>
+        <div class="tag">Realtime</div>
+    </div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+    // Grafikni sozlash
+    const ctx = document.getElementById('myChart').getContext('2d');
+    
+    const myChart = new Chart(ctx, {
+        data: {
+            labels: ['Dush', 'Sesh', 'Chor', 'Pay', 'Jum', 'Shan', 'Yak'],
+            datasets: [
+                {
+                    type: 'line',
+                    label: 'Namlik 1 (%)',
+                    data: [22, 48, 34, 58, 39, 63, 44],
+                    borderColor: '#0d8b73',
+                    borderWidth: 3,
+                    tension: 0.4, // Chiziqni silliqlashtirish
+                    pointRadius: 0 // Nuqtalarni yashirish
+                },
+                {
+                    type: 'line',
+                    label: 'Namlik 2 (%)',
+                    data: [60, 42, 55, 36, 50, 33, 40],
+                    borderColor: '#35b58f',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    pointRadius: 0,
+                    borderDash: [0, 0] 
+                },
+                {
+                    type: 'bar',
+                    label: 'Suv sarfi (L)',
+                    data: [34, 62, 42, 72, 48, 64, 55],
+                    backgroundColor: 'rgba(13, 139, 115, 0.15)', // Shaffof yashil
+                    borderRadius: 8, // Ustun burchaklarini yumaloq qilish
+                    barPercentage: 0.6
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: '#f0f0f0' },
+                    ticks: { display: false } // Y o'qi raqamlarini yashirish
+                },
+                x: {
+                    grid: { display: false }
+                }
+            },
+            plugins: {
+                legend: { display: false } // Tepada yozuvlarni yashirish
+            }
+        }
+    });
+
+    // --- REALTIME FUNKSIYASI ---
+    // Har 3 soniyada ma'lumotlarni tasodifiy o'zgartirish
+    setInterval(() => {
+        myChart.data.datasets.forEach((dataset) => {
+            dataset.data = dataset.data.map(() => Math.floor(Math.random() * 80) + 10);
+        });
+        myChart.update('none'); // 'none' animatsiyasiz tezkor yangilash uchun
+    }, 3000);
+
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>7 kunlik oqim dinamikasi</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        .chart-box {
+            width: 700px; /* Biroz kengroq */
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(13, 139, 115, 0.08);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 50px auto;
+        }
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .chart-title {
+            font-size: 18px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .tag {
+            background: #f0fdfa;
+            color: #0d8b73;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid rgba(13, 139, 115, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        /* Jonli nuqta effekti */
+        .tag::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #0d8b73;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(13, 139, 115, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(13, 139, 115, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(13, 139, 115, 0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="chart-box">
+    <div class="chart-header">
+        <strong class="chart-title">Kunlik namlik va suv sarfi (Jonli oqim)</strong>
+        <div class="tag">Realtime</div>
+    </div>
+    <div id="realtimeChart"></div>
+</div>
+
+<script>
+    // --- Boshlang'ich Sozlamalar ---
+    const ctx = document.getElementById('realtimeChart');
+
+    let MAX_POINTS = 20; // Nuqtalar sonini biroz kamaytirsangiz, oqim tezroq ko'rinadi
+    let TIME_INTERVAL = 3000; // 3 soniya
+
+    let dataBarSeries = [];
+    let dataLine1Series = [];
+    let dataLine2Series = [];
+
+    // Dastlabki ma'lumotlarni 0 emas, null yoki tasodifiy son bilan to'ldirish
+    // grafikni birinchi soniyadanoq chiroyli ko'rsatadi
+    let now = new Date().getTime();
+    for (let i = 0; i < MAX_POINTS; i++) {
+    dataBarSeries.push({ x: now - (MAX_POINTS - i) * TIME_INTERVAL, y: 0 });
+    dataLine1Series.push({ x: now - (MAX_POINTS - i) * TIME_INTERVAL, y: 0 });
+    dataLine2Series.push({ x: now - (MAX_POINTS - i) * TIME_INTERVAL, y: 0 });
+    }
+
+   var options = {
+    series: [
+        { name: 'Suv sarfi (L)', type: 'column', data: dataBarSeries },
+        { name: 'Namlik 1 (%)', type: 'line', data: dataLine1Series },
+        { name: 'Namlik 2 (%)', type: 'line', data: dataLine2Series }
+    ],
+    chart: {
+        height: 350,
+        type: 'line',
+        animations: {
+            enabled: true,
+            easing: 'linear',
+            dynamicAnimation: { speed: 1000 }
+        },
+        toolbar: { show: false },
+        zoom: { enabled: false }
+    },
+    stroke: {
+        width: [0, 3, 2],
+        curve: 'smooth' 
+    },
+    colors: ['rgba(13, 139, 115, 0.15)', '#0d8b73', '#35b58f'],
+    plotOptions: {
+        bar: { borderRadius: 5, columnWidth: '50%' }
+    },
+    dataLabels: { enabled: false },
+    legend: { show: false },
+    markers: { size: 0 },
+    xaxis: {
+        type: 'datetime',
+        range: 90000, 
+        labels: { 
+        show: true, // Mana shu joyni true qiling
+        style: {
+            colors: '#8e8e8e',
+            fontSize: '12px'
+        },
+        format: 'dd MMM' // Kun va oyni ko'rsatish uchun (masalan: 25 Mar)
+    },
+    axisTicks: { show: true },
+    axisBorder: { show: true }
+    },
+    yaxis: {
+        max: 100,
+        min: 0,
+        show: true, // Mana shu joyni true qiling
+        title: {
+        text: 'Suv miqdori (L)', // Y o'qi nomi
+        style: {
+            color: '#0d8b73',
+            fontWeight: 600
+        }
+    },
+    labels: {
+        show: true,
+        style: {
+            colors: '#8e8e8e'
+        }
+    }
+    },
+    tooltip: { x: { format: 'HH:mm:ss' } }
+  };
+
+   var chart = new ApexCharts(ctx, options);
+   chart.render();
+
+   setInterval(function () {
+    let newTime = new Date().getTime();
+    let newBar = Math.floor(Math.random() * 50) + 20;
+    let newLine1 = Math.floor(Math.random() * 40) + 40;
+    let newLine2 = Math.floor(Math.random() * 30) + 20;
+
+    // Yangi nuqtani {x, y} formatida qo'shish (X-o'qi siljishi uchun muhim)
+    dataBarSeries.push({ x: newTime, y: newBar });
+    dataLine1Series.push({ x: newTime, y: newLine1 });
+    dataLine2Series.push({ x: newTime, y: newLine2 });
+
+    if (dataBarSeries.length > MAX_POINTS) {
+        dataBarSeries.shift();
+        dataLine1Series.shift();
+        dataLine2Series.shift();
+    }
+
+    // Faqat seriyalarni yangilash
+    chart.updateSeries([
+        { data: dataBarSeries },
+        { data: dataLine1Series },
+        { data: dataLine2Series }
+    ]);
+    }, TIME_INTERVAL);
+
+</script>
+
+</body>
+</html>

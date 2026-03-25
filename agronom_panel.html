@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agronom Analitik Paneli</title>
+  <link rel="icon" href="./pic/drip_logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="./pic/drip_logo.png">
+  <link rel="manifest" href="./pic/drip_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./css/style_agronom.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo"><i class="bi bi-droplet-half"></i></div>
+        <div>
+          <h4>Smart Irrigation</h4>
+          <span>Agronom paneli</span>
+        </div>
+      </div>
+
+      <div class="menu-title">Asosiy</div>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link active" href="#"><i class="bi bi-grid-1x2-fill"></i> Panel</a>
+        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill"></i> Tahlil va trend</a>
+        <a class="nav-link" href="#"><i class="bi bi-moisture"></i> Tuproq namligi</a>
+        <a class="nav-link" href="#"><i class="bi bi-cloud-sun-fill"></i> Ob-havo prognozi</a>
+        <a class="nav-link" href="#"><i class="bi bi-calendar-check-fill"></i> Sug‘orish rejasi</a>
+      </nav>
+
+      <div class="menu-title">Boshqaruv</div>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link" href="#"><i class="bi bi-diagram-3-fill"></i> Zonalar boshqaruvi</a>
+        <a class="nav-link" href="#"><i class="bi bi-flask-fill"></i> O‘g‘itlash nazorati</a>
+        <a class="nav-link" href="#"><i class="bi bi-bell-fill"></i> Ogohlantirishlar</a>
+        <a class="nav-link" href="#"><i class="bi bi-file-earmark-text-fill"></i> Hisobotlar</a>
+        <a class="nav-link" href="#"><i class="bi bi-gear-fill"></i> Sozlamalar</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <h6>Bugungi tavsiya</h6>
+        <p>2-zonada namlik me’yordan past. 11:00–13:00 oralig‘ida 18 daqiqalik sug‘orish va KNO₃ dozasini 8% kamaytirish tavsiya etiladi.</p>
+        <button type="button" class="btn btn-light w-100 rounded-4 fw-semibold">Tavsiyani qo‘llash</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="row g-3 align-items-center">
+          <div class="col-xl-4 col-lg-12">
+            <div class="page-title">
+              <h2>Agronom analitik paneli</h2>
+              <p>Issiqxona va dala bo‘yicha vegetatsiya, namlik, suv sarfi va tavsiyalarni kuzatish</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6">
+            <div class="search-box">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Zona, ekin turi yoki ko‘rsatkich qidiring..." aria-label="Qidiruv">
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6">
+            <div class="d-flex justify-content-lg-end gap-2 flex-wrap">
+              <button type="button" class="icon-btn" aria-label="Filter"><i class="bi bi-funnel"></i></button>
+              <button type="button" class="icon-btn" aria-label="Bildirishnomalar"><i class="bi bi-bell"></i><span class="notif-dot"></span></button>
+              <div class="profile-pill">
+                <div class="profile-avatar">AG</div>
+                <div>
+                  <div class="fw-bold">Agronom</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="dash-card metric-card primary">
+            <div class="metric-top">
+              <div>
+                <div class="metric-label">Faol zonalar</div>
+                <div class="metric-value">12</div>
+              </div>
+              <div class="metric-icon"><i class="bi bi-diagram-3"></i></div>
+            </div>
+            <div class="metric-foot">
+              <span>3 ta zona kuzatuvda</span>
+              <span><i class="bi bi-arrow-up-right"></i> +2</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="dash-card metric-card success">
+            <div class="metric-top">
+              <div>
+                <div class="metric-label">O‘rtacha namlik</div>
+                <div class="metric-value">64%</div>
+              </div>
+              <div class="metric-icon"><i class="bi bi-moisture"></i></div>
+            </div>
+            <div class="metric-foot">
+              <span>Optimal diapazon: 60–70%</span>
+              <span><i class="bi bi-arrow-up-right"></i> +4%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="dash-card metric-card warning">
+            <div class="metric-top">
+              <div>
+                <div class="metric-label">Kunlik suv sarfi</div>
+                <div class="metric-value">28.4 m³</div>
+              </div>
+              <div class="metric-icon"><i class="bi bi-droplet-fill"></i></div>
+            </div>
+            <div class="metric-foot">
+              <span>Rejaga nisbatan</span>
+              <span><i class="bi bi-dash"></i> 96%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="dash-card metric-card purple">
+            <div class="metric-top">
+              <div>
+                <div class="metric-label">Hosildorlik prognozi</div>
+                <div class="metric-value">8.2 t</div>
+              </div>
+              <div class="metric-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            </div>
+            <div class="metric-foot">
+              <span>Haftalik baholash</span>
+              <span><i class="bi bi-arrow-up-right"></i> +6.1%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-xl-8">
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>Namlik va harorat trendi</h5>
+                <p>So‘nggi 7 kun bo‘yicha zona o‘rtacha ko‘rsatkichlari</p>
+              </div>
+              <span class="chip primary"><i class="bi bi-activity"></i> Jonli analitika</span>
+            </div>
+            <div class="chart-box climate">
+              <canvas id="climateTrendChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="weather-panel">
+            <div class="d-flex justify-content-between align-items-start mb-4 position-relative" style="z-index: 1; gap: 12px;">
+              <div>
+                <div class="weather-small mb-2">Bugungi agro-ob-havo</div>
+                <div class="weather-temp">29°C</div>
+                <div class="weather-small mt-2">Toshkent viloyati · Qisman bulutli</div>
+              </div>
+              <div style="font-size: 2.1rem; position: relative; z-index: 1;"><i class="bi bi-cloud-sun-fill"></i></div>
+            </div>
+            <div class="mini-stat-grid position-relative" style="z-index: 1;">
+              <div class="mini-stat">
+                <span>Namlik</span>
+                <strong>51%</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Shamol</span>
+                <strong>8 km/soat</strong>
+              </div>
+              <div class="mini-stat">
+                <span>ET₀</span>
+                <strong>4.7 mm</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Yog‘ingarchilik</span>
+                <strong>0 mm</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-xl-7">
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>Zona bo‘yicha tezkor holat</h5>
+                <p>Sensorlar, suv, EC va tavsiya etilgan amal</p>
+              </div>
+              <button type="button" class="btn btn-outline-primary rounded-4 fw-semibold px-3">Barcha zonalar</button>
+            </div>
+
+            <div class="zone-list">
+              <div class="zone-item">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">1-zona · Pomidor bloki A</div>
+                    <div class="zone-sub">Oxirgi yangilanish: 09:12 · Sensorlar faol</div>
+                  </div>
+                  <span class="chip success"><i class="bi bi-check-circle-fill"></i> Optimal</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>67%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>27.8°C</strong></div>
+                  <div class="zone-metric"><span>EC</span><strong>1.8 mS/cm</strong></div>
+                  <div class="zone-metric"><span>Suv sarfi</span><strong>3.6 m³</strong></div>
+                </div>
+              </div>
+
+              <div class="zone-item">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">2-zona · Pomidor bloki B</div>
+                    <div class="zone-sub">Oxirgi yangilanish: 09:10 · Namlik pasaygan</div>
+                  </div>
+                  <span class="chip warning"><i class="bi bi-exclamation-triangle-fill"></i> Kuzatuv</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>54%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>29.1°C</strong></div>
+                  <div class="zone-metric"><span>EC</span><strong>2.1 mS/cm</strong></div>
+                  <div class="zone-metric"><span>Suv sarfi</span><strong>2.9 m³</strong></div>
+                </div>
+              </div>
+
+              <div class="zone-item">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">3-zona · Ko‘chat sektori</div>
+                    <div class="zone-sub">Oxirgi yangilanish: 09:05 · Mikroiqlim kuchli nazoratda</div>
+                  </div>
+                  <span class="chip primary"><i class="bi bi-eye-fill"></i> Monitoring</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>72%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>25.4°C</strong></div>
+                  <div class="zone-metric"><span>EC</span><strong>1.5 mS/cm</strong></div>
+                  <div class="zone-metric"><span>Suv sarfi</span><strong>1.7 m³</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-5">
+          <div class="dash-card mb-4">
+            <div class="section-title">
+              <div>
+                <h6>AI tavsiyalari</h6>
+                <p>Agronomik qarorlarni qo‘llab-quvvatlash</p>
+              </div>
+              <span class="chip purple"><i class="bi bi-stars"></i> Smart</span>
+            </div>
+            <div class="reco-list">
+              <div class="reco-item">
+                <div class="reco-icon warning"><i class="bi bi-droplet-half"></i></div>
+                <div>
+                  <div class="item-title">2-zona uchun sug‘orishni oshirish</div>
+                  <p class="item-text">Tuproq namligi 54% gacha tushgan. 18 daqiqalik qo‘shimcha sug‘orish orqali namlikni 62–64% diapazonga qaytarish tavsiya etiladi.</p>
+                </div>
+              </div>
+              <div class="reco-item">
+                <div class="reco-icon primary"><i class="bi bi-flask"></i></div>
+                <div>
+                  <div class="item-title">O‘g‘it eritmasi konsentratsiyasini moslashtirish</div>
+                  <p class="item-text">B-blokda EC ko‘rsatkich 2.1 mS/cm. Kalsiy nitrat dozasini alohida bakda 7–8% kamaytirish muvofiq.</p>
+                </div>
+              </div>
+              <div class="reco-item">
+                <div class="reco-icon success"><i class="bi bi-thermometer-sun"></i></div>
+                <div>
+                  <div class="item-title">Issiqlik stressining oldini olish</div>
+                  <p class="item-text">Bugun tush paytida 31°C kutilmoqda. Ventilyatsiya va tomchilatib sug‘orish oralig‘ini sinxron boshqarish tavsiya qilinadi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h6>Faol ogohlantirishlar</h6>
+                <p>Diqqat talab qiladigan hodisalar</p>
+              </div>
+            </div>
+            <div class="alert-list">
+              <div class="alert-item">
+                <div class="alert-icon danger"><i class="bi bi-exclamation-octagon"></i></div>
+                <div>
+                  <div class="item-title">2-zonada namlik kritik chegaraga yaqin</div>
+                  <p class="item-text">Agar keyingi 40 daqiqada sug‘orish bo‘lmasa, vegetativ stress xavfi oshadi.</p>
+                </div>
+              </div>
+              <div class="alert-item">
+                <div class="alert-icon warning"><i class="bi bi-speedometer2"></i></div>
+                <div>
+                  <div class="item-title">Asosiy magistralda bosim o‘zgarishi</div>
+                  <p class="item-text">Bosim 2.3 bar dan 1.9 bar ga pasaydi. Filtr va nasos holatini tekshirish tavsiya etiladi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-xl-5">
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>Tuproq namligi xaritasi</h5>
+                <p>Zonalar kesimida joriy vizual holat</p>
+              </div>
+              <span class="chip success"><i class="bi bi-map"></i> Grid</span>
+            </div>
+            <div class="soil-map">
+              <div class="soil-cell moist-good">
+                <h6>A1</h6>
+                <p>Namlik: 66%<br>Holat: Optimal</p>
+              </div>
+              <div class="soil-cell moist-mid">
+                <h6>A2</h6>
+                <p>Namlik: 58%<br>Holat: Pasaygan</p>
+              </div>
+              <div class="soil-cell moist-high">
+                <h6>A3</h6>
+                <p>Namlik: 74%<br>Holat: Yuqori</p>
+              </div>
+              <div class="soil-cell moist-good">
+                <h6>B1</h6>
+                <p>Namlik: 64%<br>Holat: Barqaror</p>
+              </div>
+              <div class="soil-cell moist-low">
+                <h6>B2</h6>
+                <p>Namlik: 52%<br>Holat: Kritik</p>
+              </div>
+              <div class="soil-cell moist-good">
+                <h6>B3</h6>
+                <p>Namlik: 68%<br>Holat: Yaxshi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-7">
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>Kunlik irrigatsiya va fertigatsiya rejasi</h5>
+                <p>Amaliy ishlar va tavsiya etilgan vaqtlar</p>
+              </div>
+              <button type="button" class="btn btn-outline-success rounded-4 fw-semibold px-3">Rejani yangilash</button>
+            </div>
+
+            <div class="schedule-list mb-4">
+              <div class="schedule-item">
+                <div class="schedule-icon primary"><i class="bi bi-clock-history"></i></div>
+                <div>
+                  <div class="item-title">09:30 — 1-zona sug‘orish sikli</div>
+                  <p class="item-text">Davomiyligi: 14 daqiqa · Maqsad: vegetativ o‘sishni saqlash · Holat: tayyor</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-icon warning"><i class="bi bi-droplet"></i></div>
+                <div>
+                  <div class="item-title">11:15 — 2-zona korreksion sug‘orish</div>
+                  <p class="item-text">Davomiyligi: 18 daqiqa · Maqsad: namlikni tiklash · Holat: agronom tasdig‘i kutilmoqda</p>
+                </div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-icon success"><i class="bi bi-bezier2"></i></div>
+                <div>
+                  <div class="item-title">16:00 — Fertigation aralashmasi nazorati</div>
+                  <p class="item-text">A-bak va B-bak sarfi qayta tekshiriladi, EC 1.8–1.9 mS/cm oralig‘ida ushlanadi.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tasks-list">
+              <div class="task-item">
+                <div class="task-check success"><i class="bi bi-check2"></i></div>
+                <div>
+                  <div class="item-title">Filtr tizimi ertalab tekshirildi</div>
+                  <p class="item-text">Bosim yo‘qotilishi me’yor ichida, keyingi tekshiruv 15:00 da.</p>
+                </div>
+              </div>
+              <div class="task-item">
+                <div class="task-check primary"><i class="bi bi-hourglass-split"></i></div>
+                <div>
+                  <div class="item-title">Mikroiqlim sensori kalibrovkasi rejalashtirilgan</div>
+                  <p class="item-text">Ko‘chat sektorida namlik sensorlarini qayta kalibrlash zarur.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-xl-8">
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>Ekinlar bo‘yicha analitik jadval</h5>
+                <p>Hosildorlik, suv sarfi va tavsiya holati</p>
+              </div>
+              <span class="chip primary"><i class="bi bi-table"></i> Data view</span>
+            </div>
+            <div class="table-wrap">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Zona</th>
+                    <th>Ekin</th>
+                    <th>Namlik</th>
+                    <th>Harorat</th>
+                    <th>Kunlik suv</th>
+                    <th>Prognoz hosil</th>
+                    <th>Holat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1-zona</td>
+                    <td><span class="crop-badge"><span class="crop-dot" style="background: #12b76a;"></span> Pomidor A</span></td>
+                    <td>67%</td>
+                    <td>27.8°C</td>
+                    <td>3.6 m³</td>
+                    <td>2.4 t</td>
+                    <td><span class="chip success">Optimal</span></td>
+                  </tr>
+                  <tr>
+                    <td>2-zona</td>
+                    <td><span class="crop-badge"><span class="crop-dot" style="background: #f79009;"></span> Pomidor B</span></td>
+                    <td>54%</td>
+                    <td>29.1°C</td>
+                    <td>2.9 m³</td>
+                    <td>2.1 t</td>
+                    <td><span class="chip warning">Kuzatuv</span></td>
+                  </tr>
+                  <tr>
+                    <td>3-zona</td>
+                    <td><span class="crop-badge"><span class="crop-dot" style="background: #1f6feb;"></span> Ko‘chat</span></td>
+                    <td>72%</td>
+                    <td>25.4°C</td>
+                    <td>1.7 m³</td>
+                    <td>1.3 t</td>
+                    <td><span class="chip primary">Monitoring</span></td>
+                  </tr>
+                  <tr>
+                    <td>4-zona</td>
+                    <td><span class="crop-badge"><span class="crop-dot" style="background: #7a5af8;"></span> Bodring</span></td>
+                    <td>63%</td>
+                    <td>26.8°C</td>
+                    <td>3.1 m³</td>
+                    <td>2.4 t</td>
+                    <td><span class="chip success">Barqaror</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4">
+          <div class="dash-card h-100">
+            <div class="section-title">
+              <div>
+                <h5>Suv sarfi taqsimoti</h5>
+                <p>Zonalar bo‘yicha bugungi ulush</p>
+              </div>
+            </div>
+            <div class="chart-box water">
+              <canvas id="waterShareChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">Ma’lumotlar avtomatik ravishda 5 daqiqada yangilanadi · Smart Irrigation</div>
+    </main>
+  </div>
+
+  <script src="./js/agronom_chart.js"></script>
+  
+</body>
+</html>

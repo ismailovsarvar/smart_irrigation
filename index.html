@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Drip Irrigation</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" href="./pic/drip_logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="./pic/drip_logo.png">
+  <link rel="manifest" href="./pic/drip_logo.png">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="brand">
+        <!-- <div class="brand-badge"><a href="./index.html" class="logo"></a></div> -->
+        <div class="brand-badge">SD</div>
+        <span>Smart Drip Irrigation</span>
+      </a>
+      <nav class="nav">
+        <a class="active" href="#home">Bosh sahifa</a>
+        <a href="#roles">Rollar</a>
+        <a href="#features">Imkoniyatlar</a>
+        <a href="#preview">Asboblar paneli</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">IoT + Monitoring + Boshqaruv</div>
+          <h1>Fermer, agronom va administrator uchun yagona aqlli sug‘orish platformasi</h1>
+          <p>
+            Real vaqt monitoringi, tezkor boshqaruv, zonalar bo‘yicha tahlil va foydalanuvchi rollariga mos qulay
+            interfeys.
+            Platforma issiqxona va ochiq maydon tomchilatib sug‘orish tizimlari uchun ishlab chiqildi.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#roles">Dashboardlarni ko‘rish</a>
+            <a class="btn btn-secondary" href="#preview">Dizayn preview</a>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <span>O‘rtacha namlik</span>
+              <strong>36%</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Harorat</span>
+              <strong>28°C</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Kunlik suv sarfi</span>
+              <strong>620 L</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Bak sathi</span>
+              <strong>74%</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard">
+          <div class="dashboard-head">
+            <h3>Fermer tezkor paneli</h3>
+            <div class="status-pill"><span class="dot"></span> Avtomatik rejim</div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <label>Tuproq namligi</label>
+              <div class="metric-value"><strong>36</strong><small>%</small></div>
+              <div class="progress"><i style="width: 36%"></i></div>
+            </div>
+            <div class="metric-card">
+              <label>Havo harorati</label>
+              <div class="metric-value"><strong>28</strong><small>°C</small></div>
+              <div class="progress"><i style="width: 58%"></i></div>
+            </div>
+            <div class="metric-card">
+              <label>Suv sarfi</label>
+              <div class="metric-value"><strong>620</strong><small>L</small></div>
+              <div class="progress"><i style="width: 72%"></i></div>
+            </div>
+            <div class="metric-card">
+              <label>Suv sathi</label>
+              <div class="metric-value"><strong>74</strong><small>%</small></div>
+              <div class="progress"><i style="width: 74%"></i></div>
+            </div>
+          </div>
+
+          <div class="quick-panel">
+            <div class="quick-row">
+              <div>
+                <strong>Bugungi sug‘orish</strong>
+                <span>13:00 dan keyin ishga tushgan</span>
+              </div>
+              <div class="tag">30 min</div>
+            </div>
+            <div class="quick-row">
+              <div>
+                <strong>Faol ogohlantirish</strong>
+                <span>1 ta nazorat talab qilinadi</span>
+              </div>
+              <div class="tag" style="color:#8b5d13">Low tank</div>
+            </div>
+            <div class="quick-row">
+              <div>
+                <strong>Tizim holati</strong>
+                <span>Nasos va klapanlar me’yorida</span>
+              </div>
+              <div class="tag">Normal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roles">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Rollar bo‘yicha alohida asboblar paneli</h2>
+            <p>
+              Har bir foydalanuvchi bir xil ma’lumotni emas, o‘z ishiga kerak bo‘lgan darajadagi boshqaruv va tahlil
+              vositalarini ko‘radi.
+            </p>
+          </div>
+        </div>
+
+        <div class="roles-grid">
+          <article class="role-card">
+            <div class="role-top">
+              <div class="icon">F</div>
+              <div class="tag">index/fermer</div>
+            </div>
+            <div>
+              <h3>Fermer / issiqxona egasi</h3>
+            </div>
+            <p>
+              Sodda, tezkor va tushunarli ko‘rinish. Bosh sahifada eng kerakli ko‘rsatkichlar va tezkor boshqaruv
+              tugmalari ko‘rinadi.
+            </p>
+            <ul>
+              <li>Namlik, harorat, suv sarfi, suv sathi kartalari</li>
+              <li>Sug‘orishni yoqish/to‘xtatish</li>
+              <li>Bugungi holat va ogohlantirishlar</li>
+              <li>Katta raqamlar va oddiy ikonalar</li>
+            </ul>
+            <a href="./farmer_dashboard.html" class="role-link">Fermerga razm solish</a>
+          </article>
+
+          <article class="role-card">
+            <div class="role-top">
+              <div class="icon">A</div>
+              <div class="tag">index/agronom</div>
+            </div>
+            <div>
+              <h3>Agronom</h3>
+            </div>
+            <p>
+              Jarayonlar dinamikasi, zonalar holati, grafiklar, tavsiyalar va boshqaruv imkoniyatlari kengaytirilgan
+              ko‘rinishda taqdim etiladi.
+            </p>
+            <ul>
+              <li>Zonalar bo‘yicha monitoring va trend grafiklari</li>
+              <li>Tahlil, filtr va solishtirish oynalari</li>
+              <li>Sug‘orish jadvali va tavsiya moduli</li>
+              <li>Qaror qabul qilish uchun analitik bloklar</li>
+            </ul>
+            <a href="./agronom_panel.html" class="role-link">Agronomga razm solish</a>
+          </article>
+
+          <article class="role-card">
+            <div class="role-top">
+              <div class="icon">AD</div>
+              <div class="tag">index/admin</div>
+            </div>
+            <div>
+              <h3>Administrator</h3>
+            </div>
+            <p>
+              Foydalanuvchilar, qurilmalar, tizim loglari, ruxsatlar va umumiy konfiguratsiyalarni boshqaradigan
+              boshqaruv paneli.
+            </p>
+            <ul>
+              <li>User va role management</li>
+              <li>Field, device, sensor konfiguratsiyasi</li>
+              <li>Alarm, audit log va tizim sozlamalari</li>
+              <li>Django Admin bilan integratsiyalash uchun qulay tuzilma</li>
+            </ul>
+            <a href="#features" class="role-link">Adminga razm solish</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Platformaning asosiy imkoniyatlari</h2>
+            <p>
+              Dizayn bir vaqtning o‘zida monitoring, boshqaruv va analitik ish jarayonlarini qo‘llab-quvvatlaydigan
+              qilib tuzilgan.
+            </p>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="icon">01</div>
+            <h4>Real time monitoring</h4>
+            <p>Namlik, harorat, suv sarfi va bak sathining holati bir qarashda ko‘rinadi.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">02</div>
+            <h4>Tezkor boshqaruv</h4>
+            <p>Manual, auto va schedule rejimlari bir xil dizayn tizimida boshqariladi.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">03</div>
+            <h4>Tahlil va tavsiyalar</h4>
+            <p>Agronom uchun trend, zonalar bo‘yicha taqqoslash va tavsiya bloklari ajratiladi.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">04</div>
+            <h4>Admin nazorati</h4>
+            <p>Foydalanuvchi rollari, sensorlar, qurilmalar va loglarni boshqarish uchun tayyor asos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preview">
+      <div class="container preview-grid">
+        <div class="panel">
+          <div class="section-head" style="margin-bottom: 10px;">
+            <div>
+              <h2>Agronom boshqaruv paneli</h2>
+              <p>Grafiklar, zonalar va boshqaruv bloklari bilan kengaytirilgan ko‘rinish.</p>
+            </div>
+          </div>
+
+          <div class="subgrid">
+            <div class="small-card">
+              <span>Zone 1 namlik</span>
+              <strong>37%</strong>
+            </div>
+            <div class="small-card">
+              <span>Zone 2 namlik</span>
+              <strong>34%</strong>
+            </div>
+            <div class="small-card">
+              <span>Kunlik sarf</span>
+              <strong>1.24 m³</strong>
+            </div>
+          </div>
+          <div class="chart-box climate-card">
+            <div class="chart-header chart-header-lg">
+              <div>
+                <strong>Namlik va harorat trendi</strong>
+                <p>So‘nggi 7 kun bo‘yicha zona o‘rtacha ko‘rsatkichlari</p>
+              </div>
+              <div class="tag tag-primary">↗ Jonli analitika</div>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="indexClimateTrendChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-panel">
+          <div class="panel">
+            <div class="section-head" style="margin-bottom: 14px;">
+              <div>
+                <h2>Faol ogohlantirishlar</h2>
+                <p>Tezkor reaktsiya uchun prioritetli blok.</p>
+              </div>
+            </div>
+            <div class="alarm-box">
+              <div>
+                <strong>Bak sathi pasaygan</strong>
+                <p>12 daqiqadan beri suv sathi 20% dan past.</p>
+              </div>
+              <div class="tag" style="color:#8b5d13;background:#fff7e8;border-color:#f7d5a7;">Ogohlantirish</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="section-head" style="margin-bottom: 14px;">
+              <div>
+                <h2>Bugungi vazifalar</h2>
+                <p>Fermer va agronom uchun ishlar ro‘yxati.</p>
+              </div>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <strong>13:00 da sug‘orish</strong>
+                  <span>Zone A — 30 daqiqa</span>
+                </div>
+                <div class="tag">Rejada</div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>Sensor tekshiruvi</strong>
+                  <span>Moisture-03 signal pasaygan</span>
+                </div>
+                <div class="tag">Nazorat</div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>Tavsiya</strong>
+                  <span>Kechki sug‘orish hajmini 8% kamaytirish</span>
+                </div>
+                <div class="tag">AI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Smart Irrigation — <a href="https://t.me/ismailovsarvarbek">Ismailov Sarvarbek</a> tomonidan boshlang‘ich
+      dizayn prototipi
+    </div>
+  </footer>
+
+<script src="js/index_chart.js"></script>
+
+</body>
+
+</html>
