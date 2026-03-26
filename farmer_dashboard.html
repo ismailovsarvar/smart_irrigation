@@ -1,378 +1,409 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Drip Irrigation | Fermer Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fermer boshqaruv paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="icon" href="./pic/drip_logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="./pic/drip_logo.png">
-  <link rel="manifest" href="./pic/drip_logo.png">
-  <link rel="stylesheet" href="css/style_farmer.css" />
+  <link rel="stylesheet" href="./css/style_farmer.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#" class="brand">
-        <div class="brand-badge">SD</div>
-        <span>Smart Drip Irrigation</span>
-      </a>
-
-      <div class="topbar-right">
-        <div class="field-chip">🌿 Issiqxona-1 / Pomidor bloki</div>
-        <button class="small-btn">🔔 2 ogohlantirish</button>
-        <button class="small-btn">⟳ Yangilash</button>
-        <div class="profile-chip">
-          <div class="avatar">S</div>
-          <span>Sarvar</span>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo"><i class="bi bi-droplet-half"></i></div>
+        <div>
+          <h4>Smart Irrigation</h4>
+          <span>Fermer paneli</span>
         </div>
       </div>
-    </div>
-  </header>
 
-  <main class="page">
-    <div class="container">
-      <section class="hero">
-        <div class="card hero-main">
-          <div class="eyebrow">Fermer uchun soddalashtirilgan boshqaruv paneli</div>
-          <h1>Namlik, harorat, suv sarfi va suv sathini bir qarashda kuzating</h1>
-          <p>
-            Ushbu dashboard issiqxona egasi yoki fermer uchun mo‘ljallangan. Eng muhim parametrlar yuqorida ko‘rinadi,
-            sug‘orishni tezkor yoqish yoki to‘xtatish mumkin, ogohlantirishlar esa alohida prioritet bilan ko‘rsatiladi.
-          </p>
-          <div class="hero-meta">
-            <div class="mode-pill">📡 So‘nggi yangilanish: 12:48</div>
-            <div class="mode-pill">🚿 Bugungi rejim: Auto</div>
-            <div class="mode-pill">🗓 Keyingi sug‘orish: 13:00</div>
-          </div>
+      <div class="menu-title">Asosiy</div>
+      <a class="nav-link active" href="#"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a>
+      <a class="nav-link" href="#"><i class="bi bi-droplet-fill"></i> Sug‘orish holati</a>
+      <a class="nav-link" href="#"><i class="bi bi-moisture"></i> Namlik nazorati</a>
+      <a class="nav-link" href="#"><i class="bi bi-calendar-check-fill"></i> Bugungi reja</a>
+
+      <div class="menu-title">Tezkor boshqaruv</div>
+      <a class="nav-link" href="#"><i class="bi bi-play-circle-fill"></i> Sug‘orishni boshlash</a>
+      <a class="nav-link" href="#"><i class="bi bi-pause-circle-fill"></i> Sug‘orishni to‘xtatish</a>
+      <a class="nav-link" href="#"><i class="bi bi-water"></i> Suv baki holati</a>
+      <a class="nav-link" href="#"><i class="bi bi-bell-fill"></i> Ogohlantirishlar</a>
+
+      <div class="sidebar-card">
+        <h6>Bugungi qisqa tavsiya</h6>
+        <p>2-zonada namlik 31% ga tushgan. 13:00 da 20 daqiqalik sug‘orish ishga tushirilsa, umumiy balans me’yorida saqlanadi.</p>
+        <button type="button" class="btn-white">Tavsiyani qo‘llash</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="page-title">
+          <h2>Fermer boshqaruv paneli</h2>
+          <p>Namlik, harorat, suv sarfi va sug‘orishni sodda ko‘rinishda boshqarish</p>
         </div>
 
-        <aside class="card hero-side">
-          <div class="card-head">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Zona, qurilma yoki ko‘rsatkich qidiring...">
+        </div>
+
+        <div class="actions">
+          <button class="icon-btn" aria-label="Yangilash"><i class="bi bi-arrow-clockwise"></i></button>
+          <button class="icon-btn" aria-label="Bildirishnomalar"><i class="bi bi-bell"></i><span class="notif-dot"></span></button>
+          <div class="profile-pill">
+            <div class="profile-avatar">FM</div>
             <div>
-              <h2>Tizim holati</h2>
-              <div class="subtext">Nasos, klapan va umumiy rejim</div>
-            </div>
-            <div class="status-badge">● Ishlamoqda</div>
-          </div>
-
-          <div class="system-status">
-            <div class="system-row">
-              <div>
-                <strong>Joriy rejim</strong>
-                <div class="subtext">Tizim namlik bo‘yicha avtomatik ishlayapti</div>
-              </div>
-              <div class="mode-pill">AVTO</div>
-            </div>
-            <div class="system-row">
-              <div>
-                <strong>Nasos holati</strong>
-                <div class="subtext">Bosim me’yorida, ishga tayyor</div>
-              </div>
-              <div class="status-badge">Normal</div>
-            </div>
-            <div class="system-row">
-              <div>
-                <strong>Suv baki</strong>
-                <div class="subtext">Sath pasaymoqda, nazorat tavsiya etiladi</div>
-              </div>
-              <div class="status-badge warning">Past sath</div>
+              <div style="font-weight: 700;">Fermer</div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div>
-            <div class="subtext" style="margin-bottom:10px;">Boshqaruv rejimi</div>
-            <div class="toggle-group">
-              <button class="active">Avto</button>
-              <button>Qo‘l</button>
-              <button>To‘xtatish</button>
+      <div class="grid-4">
+        <div class="dash-card metric-card primary">
+          <div class="metric-top">
+            <div>
+              <div class="metric-label">Joriy rejim</div>
+              <div class="metric-value">AVTO</div>
             </div>
+            <div class="metric-icon"><i class="bi bi-cpu-fill"></i></div>
           </div>
-        </aside>
-      </section>
-
-      <section class="grid stats-grid">
-        <article class="card stat-card">
-          <div class="icon">💧</div>
-          <label>Tuproq namligi</label>
-          <div class="value"><strong>36</strong><span>%</span></div>
-          <div class="progress"><i style="width:36%"></i></div>
-          <div class="stat-note">Optimal darajaga yaqin. 30% dan pastlashsa sug‘orish ishga tushadi.</div>
-        </article>
-
-        <article class="card stat-card">
-          <div class="icon">🌡</div>
-          <label>Havo harorati</label>
-          <div class="value"><strong>28</strong><span>°C</span></div>
-          <div class="progress"><i style="width:58%"></i></div>
-          <div class="stat-note">Issiqxona ichki harorati normal diapazonda saqlanmoqda.</div>
-        </article>
-
-        <article class="card stat-card">
-          <div class="icon">🚰</div>
-          <label>Bugungi suv sarfi</label>
-          <div class="value"><strong>620</strong><span>L</span></div>
-          <div class="progress"><i style="width:70%"></i></div>
-          <div class="stat-note">Bugungi rejalashtirilgan hajmning taxminan 70% sarflandi.</div>
-        </article>
-
-        <article class="card stat-card">
-          <div class="icon">🛢</div>
-          <label>Suv sathi</label>
-          <div class="value"><strong>24</strong><span>%</span></div>
-          <div class="progress warning"><i style="width:24%"></i></div>
-          <div class="stat-note">Past daraja. 20% dan tushsa tizim ogohlantirish beradi.</div>
-        </article>
-      </section>
-
-      <section class="grid content-grid">
-        <div class="grid">
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>Tezkor boshqaruv</h3>
-                <div class="subtext">Fermer uchun asosiy harakatlar</div>
-              </div>
-              <div class="tag">Oddiy nazorat</div>
-            </div>
-
-            <div class="control-layout">
-              <div class="box">
-                <strong>Sug‘orish boshqaruvi</strong>
-                <div class="subtext" style="margin-top:8px;">Bir tegishda joriy blok bo‘yicha amallarni bajarish mumkin.</div>
-                <div class="action-grid">
-                  <button class="action-btn primary">▶ Sug‘orishni boshlash</button>
-                  <button class="action-btn secondary">■ Sug‘orishni to‘xtatish</button>
-                  <button class="action-btn secondary">⏱ 15 daqiqa uzaytirish</button>
-                  <button class="action-btn secondary">⚙ Auto rejimga o‘tish</button>
-                </div>
-              </div>
-
-              <div class="box">
-                <strong>Bugungi qisqa ma’lumot</strong>
-                <ul class="muted-list">
-                  <li><span>So‘nggi sug‘orish</span><strong>12:00 / 30 min</strong></li>
-                  <li><span>Keyingi ishga tushish</span><strong>13:00</strong></li>
-                  <li><span>Faol zona</span><strong>Zona B</strong></li>
-                  <li><span>Nasos bosimi</span><strong>2.1 bar</strong></li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>Maydon bo‘yicha holat</h3>
-                <div class="subtext">Zonalar kesimida namlik ko‘rsatkichlari</div>
-              </div>
-              <div class="tag">4 zona</div>
-            </div>
-
-            <div class="field-visual">
-              <div class="subtext">Past namlik bo‘lgan zonalar sariq rang bilan ajratilgan.</div>
-              <div class="field-map">
-                <div class="zone">
-                  <div class="zone-top">
-                    <strong>Zona A</strong>
-                    <div class="tag">Normal</div>
-                  </div>
-                  <div class="moisture">37%</div>
-                  <span>Qator 1–2</span>
-                  <div class="progress"><i style="width:37%"></i></div>
-                </div>
-
-                <div class="zone low">
-                  <div class="zone-top">
-                    <strong>Zona B</strong>
-                    <div class="tag warn">Past</div>
-                  </div>
-                  <div class="moisture">29%</div>
-                  <span>Qator 3–4</span>
-                  <div class="progress warning"><i style="width:29%"></i></div>
-                </div>
-
-                <div class="zone">
-                  <div class="zone-top">
-                    <strong>Zona C</strong>
-                    <div class="tag">Normal</div>
-                  </div>
-                  <div class="moisture">35%</div>
-                  <span>Qator 5–6</span>
-                  <div class="progress"><i style="width:35%"></i></div>
-                </div>
-
-                <div class="zone">
-                  <div class="zone-top">
-                    <strong>Zona D</strong>
-                    <div class="tag">Normal</div>
-                  </div>
-                  <div class="moisture">39%</div>
-                  <span>Qator 7–8</span>
-                  <div class="progress"><i style="width:39%"></i></div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>Bugungi sug‘orish jadvali</h3>
-                <div class="subtext">Rejalashtirilgan va bajarilgan ishlar</div>
-              </div>
-              <div class="tag">3 ta vazifa</div>
-            </div>
-
-            <div class="schedule-list">
-              <div class="schedule-item">
-                <div class="item-main">
-                  <strong>08:00 — Ertalabgi sug‘orish</strong>
-                  <span>Zona A va Zona C / 25 daqiqa / bajarildi</span>
-                </div>
-                <button class="schedule-action">Bajarildi</button>
-              </div>
-
-              <div class="schedule-item">
-                <div class="item-main">
-                  <strong>13:00 — Kunduzi nazorat sug‘orishi</strong>
-                  <span>Zona B / 30 daqiqa / navbatda</span>
-                </div>
-                <button class="schedule-action primary">Boshlash</button>
-              </div>
-
-              <div class="schedule-item">
-                <div class="item-main">
-                  <strong>19:00 — Kechki sug‘orish</strong>
-                  <span>Barcha zonalar / 20 daqiqa / rejalashtirilgan</span>
-                </div>
-                <button class="schedule-action">Ko‘rish</button>
-              </div>
-            </div>
-          </article>
+          <div class="metric-foot">
+            <span>Tizim ishlamoqda</span>
+            <span><i class="bi bi-check-circle-fill"></i> Faol</span>
+          </div>
         </div>
 
-        <aside class="aside-grid">
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>O‘rtacha namlik</h3>
-                <div class="subtext">Barcha zonalar bo‘yicha umumiy ko‘rsatkich</div>
-              </div>
+        <div class="dash-card metric-card success">
+          <div class="metric-top">
+            <div>
+              <div class="metric-label">O‘rtacha namlik</div>
+              <div class="metric-value">36%</div>
             </div>
+            <div class="metric-icon"><i class="bi bi-moisture"></i></div>
+          </div>
+          <div class="metric-foot">
+            <span>Optimal chegaraga yaqin</span>
+            <span><i class="bi bi-arrow-up-right"></i> +3%</span>
+          </div>
+        </div>
 
-            <div class="ring-wrap">
-              <div class="ring"><b>36%</b></div>
-              <div>
-                <strong>Me’yoriy holat</strong>
-                <div class="subtext" style="margin-top:8px;">
-                  Namlik qoniqarli. Ammo Zona B chegaraviy qiymatga yaqinlashmoqda.
-                </div>
-              </div>
+        <div class="dash-card metric-card warning">
+          <div class="metric-top">
+            <div>
+              <div class="metric-label">Bugungi suv sarfi</div>
+              <div class="metric-value">620 L</div>
             </div>
-          </article>
+            <div class="metric-icon"><i class="bi bi-droplet-fill"></i></div>
+          </div>
+          <div class="metric-foot">
+            <span>Kunlik rejaning 70%</span>
+            <span><i class="bi bi-activity"></i> Me’yor</span>
+          </div>
+        </div>
 
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>Ogohlantirishlar</h3>
-                <div class="subtext">Fermer e’tibor berishi kerak bo‘lgan holatlar</div>
-              </div>
-              <div class="tag warn">2 ta</div>
+        <div class="dash-card metric-card purple">
+          <div class="metric-top">
+            <div>
+              <div class="metric-label">Suv baki sathi</div>
+              <div class="metric-value">24%</div>
             </div>
-
-            <div class="alerts-list">
-              <div class="alert-item">
-                <div class="item-main">
-                  <strong>Suv baki sathi past</strong>
-                  <span>Joriy sath 24%. Yaqin soatlarda to‘ldirish tavsiya qilinadi.</span>
-                </div>
-                <div class="tag warn">Warning</div>
-              </div>
-
-              <div class="alert-item">
-                <div class="item-main">
-                  <strong>Zona B namligi pasaygan</strong>
-                  <span>Namlik 29% ga tushgan. Rejalashtirilgan sug‘orish saqlab qolindi.</span>
-                </div>
-                <div class="tag danger">Nazorat</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>Sensorlar holati</h3>
-                <div class="subtext">Asosiy qurilmalarning joriy statusi</div>
-              </div>
-            </div>
-
-            <div class="sensor-list">
-              <div class="sensor-item">
-                <div class="item-main">
-                  <strong>Namlik datchigi 1</strong>
-                  <span>Zona A / signal yaxshi</span>
-                </div>
-                <div class="tag">37%</div>
-              </div>
-              <div class="sensor-item">
-                <div class="item-main">
-                  <strong>Namlik datchigi 2</strong>
-                  <span>Zona B / signal yaxshi</span>
-                </div>
-                <div class="tag warn">29%</div>
-              </div>
-              <div class="sensor-item">
-                <div class="item-main">
-                  <strong>Suv sathi datchigi</strong>
-                  <span>Asosiy bak / ishlamoqda</span>
-                </div>
-                <div class="tag danger">24%</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card panel">
-            <div class="card-head">
-              <div>
-                <h3>So‘nggi faoliyat</h3>
-                <div class="subtext">Tizim loglarining qisqa ko‘rinishi</div>
-              </div>
-            </div>
-
-            <div class="activity-list">
-              <div class="activity-item">
-                <div class="item-main">
-                  <strong>12:00 da sug‘orish yakunlandi</strong>
-                  <span>Zona A va C bo‘yicha 30 daqiqa ishladi</span>
-                </div>
-                <div class="tag">Log</div>
-              </div>
-
-              <div class="activity-item">
-                <div class="item-main">
-                  <strong>11:42 da ogohlantirish yaratildi</strong>
-                  <span>Suv sathi 25% dan pastga tushdi</span>
-                </div>
-                <div class="tag warn">Alert</div>
-              </div>
-
-              <div class="activity-item">
-                <div class="item-main">
-                  <strong>09:16 da sensor ma’lumoti olindi</strong>
-                  <span>Barcha sensorlar aloqada</span>
-                </div>
-                <div class="tag">Sync</div>
-              </div>
-            </div>
-          </article>
-        </aside>
-      </section>
-
-      <div class="footer-note">
-        Smart Irrigation — <a href="https://t.me/ismailovsarvarbek">Ismailov Sarvarbek</a> tomonidan boshlang‘ich dizayn prototipi
+            <div class="metric-icon"><i class="bi bi-water"></i></div>
+          </div>
+          <div class="metric-foot">
+            <span>To‘ldirish tavsiya etiladi</span>
+            <span><i class="bi bi-exclamation-triangle-fill"></i> Past</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </main>
+
+      <div class="grid-2">
+        <div class="dash-card">
+          <div class="section-title">
+            <div>
+              <h5>Tezkor boshqaruv</h5>
+              <p>Fermer uchun kerakli asosiy tugmalar va maydon holati</p>
+            </div>
+            <span class="chip primary"><i class="bi bi-lightning-charge-fill"></i> Tezkor</span>
+          </div>
+
+          <div class="quick-actions">
+            <div class="action-tile">
+              <div class="tile-icon success"><i class="bi bi-play-fill"></i></div>
+              <div class="action-content">
+                <div class="action-body">
+                  <div class="tile-title">Sug‘orishni boshlash</div>
+                  <div class="tile-text">Joriy blok bo‘yicha darhol sug‘orishni ishga tushiradi.</div>
+                </div>
+                <button type="button" class="action-btn success">Start</button>
+              </div>
+            </div>
+            <div class="action-tile">
+              <div class="tile-icon warning"><i class="bi bi-pause-fill"></i></div>
+              <div class="action-content">
+                <div class="action-body">
+                  <div class="tile-title">Sug‘orishni to‘xtatish</div>
+                  <div class="tile-text">Nasos va klapanlar xavfsiz tarzda to‘xtatiladi.</div>
+                </div>
+                <button type="button" class="action-btn warning">Stop</button>
+              </div>
+            </div>
+            <div class="action-tile">
+              <div class="tile-icon primary"><i class="bi bi-clock-history"></i></div>
+              <div class="action-content">
+                <div class="action-body">
+                  <div class="tile-title">15 daqiqaga uzaytirish</div>
+                  <div class="tile-text">Rejalashtirilgan siklga qo‘shimcha vaqt qo‘shadi.</div>
+                </div>
+                <button type="button" class="action-btn primary">+15 min</button>
+              </div>
+            </div>
+            <div class="action-tile">
+              <div class="tile-icon purple"><i class="bi bi-arrow-repeat"></i></div>
+              <div class="action-content">
+                <div class="action-body">
+                  <div class="tile-title">Avto rejimga qaytish</div>
+                  <div class="tile-text">Tizim sensorlar bo‘yicha avtomatik boshqaruvga o‘tadi.</div>
+                </div>
+                <button type="button" class="action-btn purple">Avto rejim</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="farm-visual">
+            <div class="section-title" style="margin-bottom: 10px;">
+              <div>
+                <h6>Maydon bo‘yicha holat</h6>
+                <p>Zonalar kesimida joriy ko‘rsatkichlar</p>
+              </div>
+              <span class="chip success"><i class="bi bi-grid-3x3-gap-fill"></i> 4 zona</span>
+            </div>
+
+            <div class="field-grid">
+              <div class="zone-card">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">Zona A</div>
+                    <div class="zone-sub">Qator 1–2</div>
+                  </div>
+                  <span class="chip success">Normal</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>37%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>28°C</strong></div>
+                </div>
+              </div>
+
+              <div class="zone-card">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">Zona B</div>
+                    <div class="zone-sub">Qator 3–4</div>
+                  </div>
+                  <span class="chip warning">Past</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>29%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>29°C</strong></div>
+                </div>
+              </div>
+
+              <div class="zone-card">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">Zona C</div>
+                    <div class="zone-sub">Qator 5–6</div>
+                  </div>
+                  <span class="chip success">Barqaror</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>35%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>27°C</strong></div>
+                </div>
+              </div>
+
+              <div class="zone-card">
+                <div class="zone-head">
+                  <div>
+                    <div class="zone-name">Zona D</div>
+                    <div class="zone-sub">Qator 7–8</div>
+                  </div>                  
+                  <span class="chip primary">Kuzatuv</span>
+                </div>
+                <div class="zone-metrics">
+                  <div class="zone-metric"><span>Namlik</span><strong>39%</strong></div>
+                  <div class="zone-metric"><span>Harorat</span><strong>27°C</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="section-title">
+            <div>
+              <h5>Suv baki nazorati</h5>
+              <p>Sath, bosim va nasos bo‘yicha tezkor ma’lumot</p>
+            </div>
+            <span class="chip warning"><i class="bi bi-exclamation-circle-fill"></i> Past sath</span>
+          </div>
+
+          <div class="tank">
+            <div class="tank-visual">
+              <div class="tank-fill"></div>
+            </div>
+            <div class="tank-stats">
+              <div class="tank-stat"><span>Joriy sath</span><strong>24%</strong></div>
+              <div class="tank-stat"><span>Nasos bosimi</span><strong>2.1 bar</strong></div>
+              <div class="tank-stat"><span>Keyingi to‘ldirish</span><strong>Bugun tavsiya etiladi</strong></div>
+              <div class="tank-stat"><span>Holat</span><strong style="color:#f79009;">Nazorat kerak</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-main">
+        <div class="dash-card">
+          <div class="section-title">
+            <div>
+              <h5>Bugungi sug‘orish rejasi</h5>
+              <p>Fermer uchun sodda ko‘rinishdagi ishlar ro‘yxati</p>
+            </div>
+            <!-- <button type="button" class="action-btn success">+</button> -->
+            <span class="chip primary"><i class="bi bi-calendar-check-fill"></i> Kunlik reja</span>
+          </div>
+
+          <div class="schedule-list">
+            <div class="schedule-item">
+              <div class="schedule-icon success"><i class="bi bi-check2-circle"></i></div>
+              <div>
+                <div class="item-title">08:00 — Ertalabgi sug‘orish yakunlandi</div>
+                <p class="item-text">Zona A va Zona C bo‘yicha 25 daqiqalik sikl bajarildi. Sensorlar bo‘yicha natija me’yorida.</p>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-icon warning"><i class="bi bi-droplet-half"></i></div>
+              <div>
+                <div class="item-title">13:00 — Zona B uchun qo‘shimcha sug‘orish</div>
+                <p class="item-text">Namlik 29% gacha tushgani sabab 20 daqiqalik korreksion sug‘orish tavsiya etildi.</p>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-icon primary"><i class="bi bi-moon-stars-fill"></i></div>
+              <div>
+                <div class="item-title">19:00 — Kechki umumiy sikl</div>
+                <p class="item-text">Barcha zonalar bo‘yicha 20 daqiqalik rejalashtirilgan sug‘orish ishga tushiriladi.</p>
+              </div>
+            </div>
+          </div>
+
+          <table class="mini-table">
+            <thead>
+              <tr>
+                <th>Zona</th>
+                <th>Namlik</th>
+                <th>Holat</th>
+                <th>Amal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Zona A</td>
+                <td>37%</td>
+                <td><span class="chip success">Yaxshi</span></td>
+                <td>Kuzatish</td>
+              </tr>
+              <tr>
+                <td>Zona B</td>
+                <td>29%</td>
+                <td><span class="chip warning">Past</span></td>
+                <td>Sug‘orish tavsiya</td>
+              </tr>
+              <tr>
+                <td>Zona C</td>
+                <td>35%</td>
+                <td><span class="chip success">Normal</span></td>
+                <td>Kuzatish</td>
+              </tr>
+              <tr>
+                <td>Zona D</td>
+                <td>39%</td>
+                <td><span class="chip primary">Barqaror</span></td>
+                <td>Reja bo‘yicha</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:grid; gap:18px;">
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>Ogohlantirishlar</h5>
+                <p>Darhol e’tibor talab qiladigan holatlar</p>
+              </div>
+              <span class="chip danger"><i class="bi bi-bell-fill"></i> 2 ta</span>
+            </div>
+            <div class="alert-list">
+              <div class="alert-item">
+                <div class="alert-icon warning"><i class="bi bi-water"></i></div>
+                <div>
+                  <div class="item-title">Suv baki sathi past</div>
+                  <p class="item-text">Joriy sath 24%. Bugungi sug‘orishdan oldin bakni to‘ldirish tavsiya etiladi.</p>
+                </div>
+              </div>
+              <div class="alert-item">
+                <div class="alert-icon danger"><i class="bi bi-exclamation-octagon-fill"></i></div>
+                <div>
+                  <div class="item-title">Zona B namligi kritik chegaraga yaqin</div>
+                  <p class="item-text">Agar 13:00 dagi qo‘shimcha sug‘orish bajarilmasa, hosil stress xavfi ortadi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="section-title">
+              <div>
+                <h5>So‘nggi faoliyat</h5>
+                <p>Tizim tomonidan yozilgan qisqa loglar</p>
+              </div>
+            </div>
+            <div class="task-list">
+              <div class="task-item">
+                <div class="task-icon success"><i class="bi bi-check2"></i></div>
+                <div>
+                  <div class="item-title">12:00 da ertalabgi sikl yakunlandi</div>
+                  <p class="item-text">Nasos 30 daqiqa ishladi, suv sarfi me’yorida qayd etildi.</p>
+                </div>
+              </div>
+              <div class="task-item">
+                <div class="task-icon primary"><i class="bi bi-cpu-fill"></i></div>
+                <div>
+                  <div class="item-title">11:40 da sensor ma’lumotlari yangilandi</div>
+                  <p class="item-text">Barcha datchiklardan ma’lumotlar muvaffaqiyatli olindi.</p>
+                </div>
+              </div>
+              <div class="task-item">
+                <div class="task-icon warning"><i class="bi bi-bell-fill"></i></div>
+                <div>
+                  <div class="item-title">11:42 da ogohlantirish yaratildi</div>
+                  <p class="item-text">Suv baki sathi 25% chegaradan pastga tushgani qayd etildi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">Smart Irrigation · Fermer</div>
+    </main>
+  </div>
 </body>
 </html>
